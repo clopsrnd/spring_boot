@@ -30,7 +30,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Home</a>
+                      <a href="#">Home1</a></li>
                     
                 </ul>
              
@@ -38,10 +39,12 @@
         </div>
     </div>
 </div>
+ 
+      
 <!-- Insert content into the layouts/layout.html -->
 <th:block layout:fragment="content">
     <div class="hero-unit">
-        <h1>Devero_Demo_Cloudifyops</h1>
+        <h1>Devero_Demo1</h1>
         <p>
             Welcome to the Devero Application! The time is: <strong th:text="${#temporals.format(now, 'dd/MMM/yyyy HH:mm')}">31/12/2015 15:00</strong>
         </p>
