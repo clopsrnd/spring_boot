@@ -1,0 +1,38 @@
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    - location: scripts/installOracleJDK8.bash
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/serviceApp.bash
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
+      
+#[]$ cat scripts/install_dependencies 
+#!/bin/bash
+yum install -y httpd
+yum install -y OracleJDK8
+
+[]$ cat scripts/start_server 
+#!/bin/bash
+service httpd start
+
+[apareek@foo my_sample_app]$ cat scripts/stop_server 
+#!/bin/bash
+isExistApp = `pgrep httpd`
+if [[ -n  $isExistApp ]]; then
+    service httpd stop        
+fi
+
