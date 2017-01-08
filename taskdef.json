@@ -1,18 +1,54 @@
 {
-    "family": "poc-demo",
-    "containerDefinitions": [
+  "requiresAttributes": [
+    {
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth",
+      "targetId": null,
+      "targetType": null
+    }
+  ],
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:809410843367:task-definition/poc_demo:1",
+  "networkMode": "bridge",
+  "status": "ACTIVE",
+  "revision": 1,
+  "taskRoleArn": null,
+  "containerDefinitions": [
+    {
+      "volumesFrom": [],
+      "memory": 256,
+      "extraHosts": null,
+      "dnsServers": null,
+      "disableNetworking": null,
+      "dnsSearchDomains": null,
+      "portMappings": [
         {
-            "image": "809410843367.dkr.ecr.us-west-2.amazonaws.com/poc-sp:%BUILD_NUMBER%",
-            "name": "poc-demo",
-            "cpu": 0,
-            "memory": 256,
-            "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": 8080,
-                    "hostPort": 80
-                }
-            ]
+          "hostPort": 80,
+          "containerPort": 8080,
+          "protocol": "tcp"
         }
-    ]
+      ],
+      "hostname": null,
+      "essential": true,
+      "entryPoint": null,
+      "mountPoints": [],
+      "name": "sprintboot_container",
+      "ulimits": null,
+      "dockerSecurityOptions": null,
+      "environment": [],
+      "links": null,
+      "workingDirectory": null,
+      "readonlyRootFilesystem": null,
+      "image": "809410843367.dkr.ecr.us-west-2.amazonaws.com/poc-sp:%BUILD_NUMBER%",
+      "command": null,
+      "user": null,
+      "dockerLabels": null,
+      "logConfiguration": null,
+      "cpu": 0,
+      "privileged": null,
+      "memoryReservation": null
+    }
+  ],
+  "placementConstraints": [],
+  "volumes": [],
+  "family": "poc_demo"
 }
