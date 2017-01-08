@@ -1,6 +1,6 @@
 {
-    "family": "poc-demo",
     "revision": 1,
+    "family": "poc-demo",
     "containerDefinitions": [
         {
             "image": "809410843367.dkr.ecr.us-west-2.amazonaws.com/poc-sp:%BUILD_NUMBER%",
