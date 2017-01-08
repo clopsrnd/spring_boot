@@ -1,10 +1,6 @@
 {
     "family": "poc-demo",
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:809410843367:task-definition/poc_demo:1",
-    "networkMode": "bridge",
-    "status": "ACTIVE",
     "revision": 1,
-    "taskRoleArn": null,
     "containerDefinitions": [
         {
             "image": "809410843367.dkr.ecr.us-west-2.amazonaws.com/poc-sp:%BUILD_NUMBER%",
